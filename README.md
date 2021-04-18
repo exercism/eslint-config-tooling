@@ -44,6 +44,8 @@ In order to be able to use type information in the eslint rules, the appropiate 
 }
 ```
 
+`"tsconfigRootDir": __dirname,` is not required, but allows your editor to not infer this value, which it almost always does incorrectly, especially when you *do not* open the repository at git root / location of the `.eslint` configuration file. Setting the `tsconfigRootDir` forces the root directory for `eslint` to be the value given, and stop the editor and editor plugins from inferring the value. Setting it to a value of `__dirname` is only available in JavaScript based configuration files.
+
 ## Setup with multiple tsconfig.json and ts-paths
 
 When working with multiple folders and a composite `tsconfig.json` structure and/or using the `compilerOptions` with `paths`, you might have difficulty resolving issues around it not being able to find files, definitions, and more.
