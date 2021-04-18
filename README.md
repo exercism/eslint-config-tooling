@@ -3,7 +3,7 @@
 This is the shared [`eslint`][web-eslint] configuration used by various pieces of tooling, such as the [JavaScript Analyzer][git-javascript-analyzer], [Representer][git-javascript-representer], and [Test Runner][git-javascript-test-runner].
 The same configuration is used for the TypeScript tooling as well as various other pieces of technology.
 [Shareable configs][web-shareable-configs] are designed to work with the `extends` feature of `.eslintrc` files.
-This means you can use the same configuration [Exercism][web-exercism] uses in your on projects!
+This means you can use the same configuration [Exercism][web-exercism] uses in your own projects!
 
 ## Usage
 
