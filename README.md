@@ -35,7 +35,7 @@ Because most of the tooling is primarily focussing on running on Node, only `nod
 
 In order to be able to use type information in the eslint rules, the appropiate parser option must be set.
 
-```json
+```
 {
   "parserOptions": {
     "tsconfigRootDir": __dirname,
