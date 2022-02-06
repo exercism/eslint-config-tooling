@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Drop outdated plugin `eslint-plugin-jest`
+
 ## 0.3.0
 
 - Upgrade to ESLint 8
