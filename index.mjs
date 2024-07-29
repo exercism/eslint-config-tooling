@@ -1,6 +1,6 @@
 // @ts-check
 
-import fs from 'fs';
+import fs from 'node:fs';
 
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
@@ -42,6 +42,20 @@ export default tsEslint.config(
     },
     extends: [eslint.configs.recommended, ...tsEslint.configs.recommended],
     rules: {
+      // typescript rules
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+
       // eslint rules
       'array-callback-return': ['error', { checkForEach: true }],
       'default-param-last': 'error',
@@ -136,7 +150,6 @@ export default tsEslint.config(
         'off', // found false positives
         { allowConstantLoopConditions: true },
       ],
-      '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-use-before-define': [
         'error',
         {
@@ -172,6 +185,11 @@ export default tsEslint.config(
       '**/*.test.ts*',
     ],
     ...jestPlugin.configs['flat/recommended'],
+    rules: {
+      ...jestPlugin.configs['flat/recommended'].rules,
+      'jest/no-disabled-tests': 'off',
+      'jest/no-test-prefixes': 'off',
+    },
 
     languageOptions: {
       globals: {
