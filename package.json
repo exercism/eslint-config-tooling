@@ -1,6 +1,6 @@
 {
   "name": "@exercism/eslint-config-tooling",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "ESLint configuration for various pieces of tooling on Exercism",
   "main": "index.mjs",
   "scripts": {
@@ -9,21 +9,21 @@
   "author": "Derk-Jan Karrenbeld <derk-jan+git@karrenbeld.info> (https://derk-jan.com)",
   "license": "MIT",
   "peerDependencies": {
-    "eslint": ">= 9.8",
-    "typescript": ">= 5.5"
+    "eslint": ">= 9.13",
+    "typescript": ">= 5.6"
   },
   "devDependencies": {
-    "eslint": "^9.8.0",
+    "eslint": "^9.13.0",
     "prettier": "^3.3.3",
-    "typescript": "~5.5.4"
+    "typescript": "~5.6.3"
   },
   "dependencies": {
-    "@eslint/js": "^9.8.0",
-    "@stylistic/eslint-plugin-ts": "^2.6.1",
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin-ts": "^2.9.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest": "^28.8.0",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.0.1"
+    "eslint-plugin-jest": "^28.8.3",
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.10.0"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.5.1+sha512.341db9396b6e289fecc30cd7ab3af65060e05ebff4b3b47547b278b9e67b08f485ecd8c79006b405446262142c7a38154445ef7f17c1d5d1de7d90bf9ce7054d"
 }
