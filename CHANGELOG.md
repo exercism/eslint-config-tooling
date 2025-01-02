@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.0
+
+- Move to pnpm
+- Change plugin layout
+
 ## 0.7.0
 
 - Update dependencies
