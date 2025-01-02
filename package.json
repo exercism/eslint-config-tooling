@@ -1,6 +1,6 @@
 {
   "name": "@exercism/eslint-config-tooling",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "ESLint configuration for various pieces of tooling on Exercism",
   "main": "index.mjs",
   "scripts": {

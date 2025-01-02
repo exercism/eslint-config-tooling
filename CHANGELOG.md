@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1
+
+- Fix vscode SDK settings
+
 ## 0.8.0
 
 - Move to pnpm
