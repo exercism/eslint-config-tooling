@@ -15,7 +15,7 @@ const pkg = JSON.parse(
 );
 
 /** @type {import('eslint').ESLint.Plugin} */
-const plugin = {
+export const plugin = {
   meta: {
     name: pkg.name,
     version: pkg.version,
@@ -27,9 +27,6 @@ export default tsEslint.config(
     plugins: {
       '@typescript-eslint': tsEslint.plugin,
       '@stylistic/ts': stylisticTs,
-      jest: jestPlugin,
-      // @ts-expect-error we know this is set from the contents above, but the type makes it optional
-      [plugin.meta.name]: plugin,
     },
     languageOptions: {
       parser: tsEslint.parser,
