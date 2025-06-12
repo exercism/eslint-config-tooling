@@ -49,6 +49,17 @@ An easy way to resolve this is to create a new `tsconfig.eslint.json` that inclu
 That `tsconfig.eslint.json` should then be referred in `project`, instead of the regular configuration file.
 You can check out the [JavaScript Analyzer][git-javascript-analyzer] for an example.
 
+## Development
+
+If you want to work on this repository, install the dependencies using `corepack` and `pnpm`:
+
+```shell
+corepack enable pnpm
+corepack pnpm install
+```
+
+Because pnpm is configured to use isolated `node_modules` (symlinked), everything such as your tools and plugins inside your editor should keep working as expected.
+
 [git-eslint-plugin-import]: https://github.com/benmosher/eslint-plugin-import
 [git-eslint-plugin-prettier]: https://github.com/prettier/eslint-config-prettier
 [git-javascript]: https://github.com/exercism/javascript
