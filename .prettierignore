@@ -1,11 +1,10 @@
-/.appends
 /.vscode
-/.yarn
-
-/.pnp.*
+/node_modules
 
 # These are org-wide files (https://github.com/exercism/org-wide-files/)
 /.github/labels.yml
+/.github/workflows/pause-community-contributions.yml
 /.github/workflows/sync-labels.yml
+
 /CODE_OF_CONDUCT.md
 /LICENSE

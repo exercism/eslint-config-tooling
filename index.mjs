@@ -5,7 +5,6 @@ import fs from 'node:fs';
 import eslint from '@eslint/js';
 import tsEslint from 'typescript-eslint';
 import jestPlugin from 'eslint-plugin-jest';
-import stylisticTs from '@stylistic/eslint-plugin-ts';
 import prettierConfig from 'eslint-config-prettier';
 
 import globals from 'globals';
@@ -26,7 +25,6 @@ export default tsEslint.config(
   {
     plugins: {
       '@typescript-eslint': tsEslint.plugin,
-      '@stylistic/ts': stylisticTs,
     },
     languageOptions: {
       parser: tsEslint.parser,
@@ -52,6 +50,7 @@ export default tsEslint.config(
           ignoreRestSiblings: true,
         },
       ],
+      '@typescript-eslint/no-require-imports': 'off',
 
       // eslint rules
       'array-callback-return': ['error', { checkForEach: true }],
@@ -72,7 +71,7 @@ export default tsEslint.config(
     // missing: import/* plugins
   },
   {
-    files: ['**.ts', '**.tsx'],
+    files: ['**/*.{ts,mts,cts,tsx}'],
     extends: [...tsEslint.configs.recommendedTypeCheckedOnly],
     rules: {
       // Enable boundary checks on TS files
@@ -124,16 +123,12 @@ export default tsEslint.config(
         'warn',
         { ignoreVoidOperator: true },
       ],
-      '@typescript-eslint/no-implicit-any-catch': [
-        'warn',
-        { allowExplicitAny: true },
-      ],
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/no-parameter-properties': [
+      '@typescript-eslint/parameter-properties': [
         'warn',
         {
-          allows: [
+          allow: [
             'private',
             'protected',
             'public',
@@ -169,17 +164,17 @@ export default tsEslint.config(
   },
   {
     // disable type-aware linting on JS files
-    files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+    files: ['**/*.{js,cjs,mjs,jsx}'],
     ...tsEslint.configs.disableTypeChecked,
   },
+  // // @ts-expect-error import is weirdly nullable
+  // importPlugin.flatConfigs.recommended,
   {
     // enable jest rules on test files
     files: [
       'test/**',
-      '**/*.spec.js*',
-      '**/*.test.js*',
-      '**/*.spec.ts*',
-      '**/*.test.ts*',
+      '**/*.spec.{js,mjs,cjs,jsx,ts,mts,cts,tsx}*',
+      '**/*.test.{js,mjs,cjs,jsx,ts,mts,cts,tsx}*',
     ],
     ...jestPlugin.configs['flat/recommended'],
     rules: {
@@ -198,7 +193,5 @@ export default tsEslint.config(
     },
   },
 
-  // https://github.com/import-js/eslint-plugin-import/pull/3018
-  // missing: import/* plugins
   prettierConfig,
 );

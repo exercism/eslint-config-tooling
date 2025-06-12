@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0
+
+- Move to pnpm
+- Upgrade typescript
+- Update dependencies
+- Add smoke tests
+
 ## 0.8.1
 
 - Fix vscode SDK settings
