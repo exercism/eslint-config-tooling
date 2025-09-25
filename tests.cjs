@@ -23,6 +23,8 @@ void (async function run() {
       failing[0].errorCount + failing[0].warningCount !== 0,
       `Expected errors or warnings, actual: errors: ${failing[0].errorCount}, warnings: ${failing[0].warningCount}`,
     );
+
+    console.log('All tests ran');
   }
 })().catch((error) => {
   console.error(error);
